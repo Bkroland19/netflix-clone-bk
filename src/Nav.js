@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import "./Nav.css";
 
 function Nav() {
+  const history = useHistory();
   const [show, handleShow] = useState(false);
 
   const transitionNavBar = () => {
@@ -24,12 +26,14 @@ function Nav() {
     <div className={`nav ${show && "nav__blue"}`}>
       <div className="nav_content">
         <img
+          onClick={() => history.push("/")}
           className="nav_logo"
           src="https://img.pngio.com/netflix-logo-transparent-png-stickpng-netflix-logo-transparent-background-2560_1440.png"
           alt=""
         />
 
         <img
+          onClick={() => history.push("/profile")}
           className="nav_avatar"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkhYVocW3Ux23hw3ZHahyXSGuCvM0QJdkwPg&usqp=CAU"
           alt=""
